@@ -12,12 +12,17 @@ namespace CodingEventsTester
         static void Main(string[] args)
         {
             Database.SetInitializer(new NullDatabaseInitializer<CodeEventsDomain.DataModel.CodingEventContext>());
-            insertApp();
-            insertLayer();
+            //insertApp();
+            //insertLayer();
             //appQuery();
             //update();
             //loadrelatedData_AppLayers();
             //delete();
+
+            eagerLoad_Events();
+            explicitLoad_Events();
+            lazyLoad_Events();
+            projectionQuery_Events();
 
 
             Console.ReadLine();
@@ -94,11 +99,52 @@ namespace CodingEventsTester
             }
         }
 
-        private static void loadrelatedData_AppLayers()
+       
+        private static void lazyLoad_Events()
         {
-            
+            using (var context = new CodeEventsDomain.DataModel.CodingEventContext())
+            {
+                context.Database.Log = Console.WriteLine;
+
+                var myapp = context.APP_DS.FirstOrDefault(app => app.Id == 2);
+
+            }
         }
 
+        private static void explicitLoad_Events()
+        {
+
+            using (var context = new CodeEventsDomain.DataModel.CodingEventContext())
+            {
+                context.Database.Log = Console.WriteLine;
+
+                var myapp = context.APP_DS.FirstOrDefault(app => app.Id == 2);
+                context.Entry(myapp).Collection(layer => layer.MyAppLayers).Load();
+
+            }
+
+        }
+
+        private static void eagerLoad_Events()
+        {
+            using (var context = new CodeEventsDomain.DataModel.CodingEventContext())
+            {
+                context.Database.Log = Console.WriteLine;
+                var myapp  = context.APP_DS.Include(layer => layer.MyAppLayers).FirstOrDefault(app => app.Id == 2);
+               
+
+            }
+        }
+
+        private static void projectionQuery_Events() 
+        {
+            using (var context = new CodeEventsDomain.DataModel.CodingEventContext())
+            {
+                context.Database.Log = Console.WriteLine;
+                var _eventsds = context.Events_DS.FirstOrDefault(e => e.AppID == 2);
+                var events = context.Events_DS.Select(e => new { e.EventDesc, e.EventID ,e.LayerObj.LayerName, e.LayerObj.MyApp.AppName}).ToList();
+            }
+        }
 
     }
 

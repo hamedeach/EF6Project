@@ -17,7 +17,7 @@ namespace CodeEventsDomain.Classes
         public string AppDESC { get; set; }
         public string AppDesc2 { get; set; }
 
-        public virtual List<APP_Layers> MyAppLayers { get; set; }
+        public  List<APP_Layers> MyAppLayers { get; set; }
 
         public myApp()
         {

@@ -31,7 +31,7 @@ namespace CodeEventsDomain.Classes
         public myApp MyApp { get; set; }
 
         [ForeignKey("Parent_Layer_ID,Parent_App_ID")]
-        public virtual APP_Layers ParentLayer { get; set; }
+        public  APP_Layers ParentLayer { get; set; }
 
         public List<CodingEvent> LayerEvents { get; set; }
 

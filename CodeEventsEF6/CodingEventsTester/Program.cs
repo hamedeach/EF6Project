@@ -12,10 +12,15 @@ namespace CodingEventsTester
         static void Main(string[] args)
         {
             Database.SetInitializer(new NullDatabaseInitializer<CodeEventsDomain.DataModel.CodingEventContext>());
-            //insertApp();
-            appQuery();
+            insertApp();
+            insertLayer();
+            //appQuery();
+            //update();
+            //loadrelatedData_AppLayers();
+            //delete();
 
-            Console.ReadLine(); 
+
+            Console.ReadLine();
         }
 
         private static void insertApp()
@@ -36,6 +41,20 @@ namespace CodingEventsTester
 
         }
 
+        private static void insertLayer()
+        {
+            using (var context = new CodeEventsDomain.DataModel.CodingEventContext())
+            {
+                context.Database.Log = Console.WriteLine;
+                var app = context.APP_DS.ToList().FirstOrDefault();
+                app.MyAppLayers.Add(new CodeEventsDomain.Classes.APP_Layers {  LayerDESC = "new layer desc" });
+                context.SaveChanges();
+
+                
+
+            }
+        }
+
         private static void appQuery()
         {
             using (var context = new CodeEventsDomain.DataModel.CodingEventContext())
@@ -47,11 +66,40 @@ namespace CodingEventsTester
                     Console.WriteLine("APP Name is : \r\n" + item.AppName);
 
                 }
-              
+
             }
         }
 
+        private static void update()
+        {
+            using (var context = new CodeEventsDomain.DataModel.CodingEventContext())
+            {
+                context.Database.Log = Console.WriteLine;
+                var app = context.APP_DS.ToList().Find(a => a.Id == 1);
+                app.AppDESC = "this is updated desc ";
+                context.SaveChanges();
+
+            }
+
+        }
+
+        private static void delete()
+        {
+            using (var context = new CodeEventsDomain.DataModel.CodingEventContext())
+            {
+                context.Database.Log = Console.WriteLine;
+                var app = context.APP_DS.ToList().Find(a => a.Id == 1);
+                context.APP_DS.Remove(app);
+                context.SaveChanges();
+            }
+        }
+
+        private static void loadrelatedData_AppLayers()
+        {
+            
+        }
 
 
     }
+
 }

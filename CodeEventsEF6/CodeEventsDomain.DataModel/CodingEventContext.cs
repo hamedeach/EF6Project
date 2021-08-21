@@ -14,5 +14,14 @@ namespace CodeEventsDomain.DataModel
         public DbSet<APP_Layers> APPLayer_DS { set; get; }
         public DbSet<CodingEvent> Events_DS { set; get; }
 
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<CodeEventsDomain.Classes.APP_Layers>()
+        //        .HasOptional(l => l.ParentLayer)
+        //        .WithMany()
+        //        .HasForeignKey(p => new { p.Parent_Layer_ID, p.AppID });
+        //    base.OnModelCreating(modelBuilder);
+        //}
+
     }
 }

@@ -14,19 +14,25 @@ namespace CodeEventsDomain.Classes
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+
         [Key]
         [Column(Order =1)]
         public int AppID { get; set; }
+       
+
+        public int? Parent_Layer_ID { get; set; }
+        public int? Parent_App_ID { get; set; }
         public string LayerName { get; set; }
-        public int ParentLayerID { get; set; }
         public string LayerDESC { get; set; }
+
        
         [Required]
         [ForeignKey("AppID")]
         public myApp MyApp { get; set; }
 
-    
-        public APP_Layers ParentLayer { get; set; }
+        [ForeignKey("Parent_Layer_ID,Parent_App_ID")]
+        public virtual APP_Layers ParentLayer { get; set; }
+
         public List<CodingEvent> LayerEvents { get; set; }
 
 

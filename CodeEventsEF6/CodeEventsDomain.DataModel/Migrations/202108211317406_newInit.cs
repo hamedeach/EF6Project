@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initial_Migration : DbMigration
+    public partial class newInit : DbMigration
     {
         public override void Up()
         {
@@ -14,6 +14,7 @@
                         Id = c.Int(nullable: false, identity: true),
                         AppName = c.String(),
                         AppDESC = c.String(),
+                        AppDesc2 = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -21,19 +22,18 @@
                 "dbo.APP_Layers",
                 c => new
                     {
-                        Id = c.Int(nullable: false),
+                        Id = c.Int(nullable: false, identity: true),
                         AppID = c.Int(nullable: false),
+                        Parent_Layer_ID = c.Int(),
+                        Parent_App_ID = c.Int(),
                         LayerName = c.String(),
-                        ParentLayerID = c.Int(nullable: false),
                         LayerDESC = c.String(),
-                        ParentLayer_Id = c.Int(),
-                        ParentLayer_AppID = c.Int(),
                     })
                 .PrimaryKey(t => new { t.Id, t.AppID })
                 .ForeignKey("dbo.myApps", t => t.AppID, cascadeDelete: true)
-                .ForeignKey("dbo.APP_Layers", t => new { t.ParentLayer_Id, t.ParentLayer_AppID })
+                .ForeignKey("dbo.APP_Layers", t => new { t.Parent_Layer_ID, t.Parent_App_ID })
                 .Index(t => t.AppID)
-                .Index(t => new { t.ParentLayer_Id, t.ParentLayer_AppID });
+                .Index(t => new { t.Parent_Layer_ID, t.Parent_App_ID });
             
             CreateTable(
                 "dbo.CodingEvents",
@@ -54,11 +54,11 @@
         
         public override void Down()
         {
-            DropForeignKey("dbo.APP_Layers", new[] { "ParentLayer_Id", "ParentLayer_AppID" }, "dbo.APP_Layers");
+            DropForeignKey("dbo.APP_Layers", new[] { "Parent_Layer_ID", "Parent_App_ID" }, "dbo.APP_Layers");
             DropForeignKey("dbo.APP_Layers", "AppID", "dbo.myApps");
             DropForeignKey("dbo.CodingEvents", new[] { "LayerID", "AppID" }, "dbo.APP_Layers");
             DropIndex("dbo.CodingEvents", new[] { "LayerID", "AppID" });
-            DropIndex("dbo.APP_Layers", new[] { "ParentLayer_Id", "ParentLayer_AppID" });
+            DropIndex("dbo.APP_Layers", new[] { "Parent_Layer_ID", "Parent_App_ID" });
             DropIndex("dbo.APP_Layers", new[] { "AppID" });
             DropTable("dbo.CodingEvents");
             DropTable("dbo.APP_Layers");

@@ -15,6 +15,13 @@ namespace CodeEventsDomain.Classes
         public int Id { get; set; }
         public string AppName { get; set; }
         public string AppDESC { get; set; }
-        public List<APP_Layers> MyAppLayers { get; set; }
+        public string AppDesc2 { get; set; }
+
+        public virtual List<APP_Layers> MyAppLayers { get; set; }
+
+        public myApp()
+        {
+            this.MyAppLayers = new List<APP_Layers>();
+        }
     }
 }

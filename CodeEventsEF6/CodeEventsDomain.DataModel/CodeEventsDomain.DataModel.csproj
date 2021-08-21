@@ -52,13 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CodingEventContext.cs" />
-    <Compile Include="Migrations\202108191246051_Initial_Migration.cs" />
-    <Compile Include="Migrations\202108191246051_Initial_Migration.designer.cs">
-      <DependentUpon>202108191246051_Initial_Migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108191558524_AutoIDColumns.cs" />
-    <Compile Include="Migrations\202108191558524_AutoIDColumns.designer.cs">
-      <DependentUpon>202108191558524_AutoIDColumns.cs</DependentUpon>
+    <Compile Include="Migrations\202108211317406_newInit.cs" />
+    <Compile Include="Migrations\202108211317406_newInit.designer.cs">
+      <DependentUpon>202108211317406_newInit.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,28 +63,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="_CodeEventsDomain_DataModel_CodingEventContextDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_CodeEventsDomain_DataModel_CodingEventContextDataSet.xsd</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="_CodeEventsDomain_DataModel_CodingEventContextDataSet.xsc">
-      <DependentUpon>_CodeEventsDomain_DataModel_CodingEventContextDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="_CodeEventsDomain_DataModel_CodingEventContextDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>_CodeEventsDomain_DataModel_CodingEventContextDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="_CodeEventsDomain_DataModel_CodingEventContextDataSet.xss">
-      <DependentUpon>_CodeEventsDomain_DataModel_CodingEventContextDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -98,11 +78,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202108191246051_Initial_Migration.resx">
-      <DependentUpon>202108191246051_Initial_Migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108191558524_AutoIDColumns.resx">
-      <DependentUpon>202108191558524_AutoIDColumns.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202108211317406_newInit.resx">
+      <DependentUpon>202108211317406_newInit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

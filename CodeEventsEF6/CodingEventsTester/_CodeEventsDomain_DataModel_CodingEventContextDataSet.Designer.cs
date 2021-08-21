@@ -32,7 +32,7 @@ namespace CodingEventsTester {
         
         private myAppsDataTable tablemyApps;
         
-        private global::System.Data.DataRelation _relationFK_dbo_APP_Layers_dbo_APP_Layers_ParentLayer_Id_ParentLayer_AppID;
+        private global::System.Data.DataRelation _relationFK_dbo_APP_Layers_dbo_APP_Layers_Parent_Layer_ID_Parent_App_ID;
         
         private global::System.Data.DataRelation _relationFK_dbo_APP_Layers_dbo_myApps_AppID;
         
@@ -272,7 +272,7 @@ namespace CodingEventsTester {
                     this.tablemyApps.InitVars();
                 }
             }
-            this._relationFK_dbo_APP_Layers_dbo_APP_Layers_ParentLayer_Id_ParentLayer_AppID = this.Relations["FK_dbo.APP_Layers_dbo.APP_Layers_ParentLayer_Id_ParentLayer_AppID"];
+            this._relationFK_dbo_APP_Layers_dbo_APP_Layers_Parent_Layer_ID_Parent_App_ID = this.Relations["FK_dbo.APP_Layers_dbo.APP_Layers_Parent_Layer_ID_Parent_App_ID"];
             this._relationFK_dbo_APP_Layers_dbo_myApps_AppID = this.Relations["FK_dbo.APP_Layers_dbo.myApps_AppID"];
             this._relationFK_dbo_CodingEvents_dbo_APP_Layers_LayerID_AppID = this.Relations["FK_dbo.CodingEvents_dbo.APP_Layers_LayerID_AppID"];
         }
@@ -293,12 +293,12 @@ namespace CodingEventsTester {
             base.Tables.Add(this.tableCodingEvents);
             this.tablemyApps = new myAppsDataTable();
             base.Tables.Add(this.tablemyApps);
-            this._relationFK_dbo_APP_Layers_dbo_APP_Layers_ParentLayer_Id_ParentLayer_AppID = new global::System.Data.DataRelation("FK_dbo.APP_Layers_dbo.APP_Layers_ParentLayer_Id_ParentLayer_AppID", new global::System.Data.DataColumn[] {
+            this._relationFK_dbo_APP_Layers_dbo_APP_Layers_Parent_Layer_ID_Parent_App_ID = new global::System.Data.DataRelation("FK_dbo.APP_Layers_dbo.APP_Layers_Parent_Layer_ID_Parent_App_ID", new global::System.Data.DataColumn[] {
                         this.tableAPP_Layers.IdColumn,
                         this.tableAPP_Layers.AppIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAPP_Layers.ParentLayer_IdColumn,
-                        this.tableAPP_Layers.ParentLayer_AppIDColumn}, false);
-            this.Relations.Add(this._relationFK_dbo_APP_Layers_dbo_APP_Layers_ParentLayer_Id_ParentLayer_AppID);
+                        this.tableAPP_Layers.Parent_Layer_IDColumn,
+                        this.tableAPP_Layers.Parent_App_IDColumn}, false);
+            this.Relations.Add(this._relationFK_dbo_APP_Layers_dbo_APP_Layers_Parent_Layer_ID_Parent_App_ID);
             this._relationFK_dbo_APP_Layers_dbo_myApps_AppID = new global::System.Data.DataRelation("FK_dbo.APP_Layers_dbo.myApps_AppID", new global::System.Data.DataColumn[] {
                         this.tablemyApps.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableAPP_Layers.AppIDColumn}, false);
@@ -720,15 +720,13 @@ namespace CodingEventsTester {
             
             private global::System.Data.DataColumn columnAppID;
             
+            private global::System.Data.DataColumn columnParent_Layer_ID;
+            
+            private global::System.Data.DataColumn columnParent_App_ID;
+            
             private global::System.Data.DataColumn columnLayerName;
             
-            private global::System.Data.DataColumn columnParentLayerID;
-            
             private global::System.Data.DataColumn columnLayerDESC;
-            
-            private global::System.Data.DataColumn columnParentLayer_Id;
-            
-            private global::System.Data.DataColumn columnParentLayer_AppID;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -781,6 +779,22 @@ namespace CodingEventsTester {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Parent_Layer_IDColumn {
+                get {
+                    return this.columnParent_Layer_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Parent_App_IDColumn {
+                get {
+                    return this.columnParent_App_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn LayerNameColumn {
                 get {
                     return this.columnLayerName;
@@ -789,33 +803,9 @@ namespace CodingEventsTester {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ParentLayerIDColumn {
-                get {
-                    return this.columnParentLayerID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn LayerDESCColumn {
                 get {
                     return this.columnLayerDESC;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ParentLayer_IdColumn {
-                get {
-                    return this.columnParentLayer_Id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ParentLayer_AppIDColumn {
-                get {
-                    return this.columnParentLayer_AppID;
                 }
             }
             
@@ -856,16 +846,15 @@ namespace CodingEventsTester {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public APP_LayersRow AddAPP_LayersRow(int Id, myAppsRow _parentmyAppsRowByFK_dbo_APP_Layers_dbo_myApps_AppID, string LayerName, int ParentLayerID, string LayerDESC, int ParentLayer_Id, int ParentLayer_AppID) {
+            public APP_LayersRow AddAPP_LayersRow(myAppsRow _parentmyAppsRowByFK_dbo_APP_Layers_dbo_myApps_AppID, int Parent_Layer_ID, int Parent_App_ID, string LayerName, string LayerDESC) {
                 APP_LayersRow rowAPP_LayersRow = ((APP_LayersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
                         null,
+                        null,
+                        Parent_Layer_ID,
+                        Parent_App_ID,
                         LayerName,
-                        ParentLayerID,
-                        LayerDESC,
-                        ParentLayer_Id,
-                        ParentLayer_AppID};
+                        LayerDESC};
                 if ((_parentmyAppsRowByFK_dbo_APP_Layers_dbo_myApps_AppID != null)) {
                     columnValuesArray[1] = _parentmyAppsRowByFK_dbo_APP_Layers_dbo_myApps_AppID[0];
                 }
@@ -901,11 +890,10 @@ namespace CodingEventsTester {
             internal void InitVars() {
                 this.columnId = base.Columns["Id"];
                 this.columnAppID = base.Columns["AppID"];
+                this.columnParent_Layer_ID = base.Columns["Parent_Layer_ID"];
+                this.columnParent_App_ID = base.Columns["Parent_App_ID"];
                 this.columnLayerName = base.Columns["LayerName"];
-                this.columnParentLayerID = base.Columns["ParentLayerID"];
                 this.columnLayerDESC = base.Columns["LayerDESC"];
-                this.columnParentLayer_Id = base.Columns["ParentLayer_Id"];
-                this.columnParentLayer_AppID = base.Columns["ParentLayer_AppID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -915,23 +903,24 @@ namespace CodingEventsTester {
                 base.Columns.Add(this.columnId);
                 this.columnAppID = new global::System.Data.DataColumn("AppID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAppID);
+                this.columnParent_Layer_ID = new global::System.Data.DataColumn("Parent_Layer_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnParent_Layer_ID);
+                this.columnParent_App_ID = new global::System.Data.DataColumn("Parent_App_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnParent_App_ID);
                 this.columnLayerName = new global::System.Data.DataColumn("LayerName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLayerName);
-                this.columnParentLayerID = new global::System.Data.DataColumn("ParentLayerID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnParentLayerID);
                 this.columnLayerDESC = new global::System.Data.DataColumn("LayerDESC", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLayerDESC);
-                this.columnParentLayer_Id = new global::System.Data.DataColumn("ParentLayer_Id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnParentLayer_Id);
-                this.columnParentLayer_AppID = new global::System.Data.DataColumn("ParentLayer_AppID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnParentLayer_AppID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId,
                                 this.columnAppID}, true));
+                this.columnId.AutoIncrement = true;
+                this.columnId.AutoIncrementSeed = -1;
+                this.columnId.AutoIncrementStep = -1;
                 this.columnId.AllowDBNull = false;
+                this.columnId.ReadOnly = true;
                 this.columnAppID.AllowDBNull = false;
                 this.columnLayerName.MaxLength = 2147483647;
-                this.columnParentLayerID.AllowDBNull = false;
                 this.columnLayerDESC.MaxLength = 2147483647;
             }
             
@@ -1410,6 +1399,8 @@ namespace CodingEventsTester {
             
             private global::System.Data.DataColumn columnAppDESC;
             
+            private global::System.Data.DataColumn columnAppDesc2;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public myAppsDataTable() {
@@ -1469,6 +1460,14 @@ namespace CodingEventsTester {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn AppDesc2Column {
+                get {
+                    return this.columnAppDesc2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1504,12 +1503,13 @@ namespace CodingEventsTester {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public myAppsRow AddmyAppsRow(string AppName, string AppDESC) {
+            public myAppsRow AddmyAppsRow(string AppName, string AppDESC, string AppDesc2) {
                 myAppsRow rowmyAppsRow = ((myAppsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         AppName,
-                        AppDESC};
+                        AppDESC,
+                        AppDesc2};
                 rowmyAppsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowmyAppsRow);
                 return rowmyAppsRow;
@@ -1542,6 +1542,7 @@ namespace CodingEventsTester {
                 this.columnId = base.Columns["Id"];
                 this.columnAppName = base.Columns["AppName"];
                 this.columnAppDESC = base.Columns["AppDESC"];
+                this.columnAppDesc2 = base.Columns["AppDesc2"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1553,6 +1554,8 @@ namespace CodingEventsTester {
                 base.Columns.Add(this.columnAppName);
                 this.columnAppDESC = new global::System.Data.DataColumn("AppDESC", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAppDESC);
+                this.columnAppDesc2 = new global::System.Data.DataColumn("AppDesc2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAppDesc2);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -1563,6 +1566,7 @@ namespace CodingEventsTester {
                 this.columnId.Unique = true;
                 this.columnAppName.MaxLength = 2147483647;
                 this.columnAppDESC.MaxLength = 2147483647;
+                this.columnAppDesc2.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1786,6 +1790,38 @@ namespace CodingEventsTester {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Parent_Layer_ID {
+                get {
+                    try {
+                        return ((int)(this[this.tableAPP_Layers.Parent_Layer_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Parent_Layer_ID\' in table \'APP_Layers\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAPP_Layers.Parent_Layer_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Parent_App_ID {
+                get {
+                    try {
+                        return ((int)(this[this.tableAPP_Layers.Parent_App_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Parent_App_ID\' in table \'APP_Layers\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAPP_Layers.Parent_App_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string LayerName {
                 get {
                     try {
@@ -1797,17 +1833,6 @@ namespace CodingEventsTester {
                 }
                 set {
                     this[this.tableAPP_Layers.LayerNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int ParentLayerID {
-                get {
-                    return ((int)(this[this.tableAPP_Layers.ParentLayerIDColumn]));
-                }
-                set {
-                    this[this.tableAPP_Layers.ParentLayerIDColumn] = value;
                 }
             }
             
@@ -1829,44 +1854,12 @@ namespace CodingEventsTester {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int ParentLayer_Id {
-                get {
-                    try {
-                        return ((int)(this[this.tableAPP_Layers.ParentLayer_IdColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ParentLayer_Id\' in table \'APP_Layers\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAPP_Layers.ParentLayer_IdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int ParentLayer_AppID {
-                get {
-                    try {
-                        return ((int)(this[this.tableAPP_Layers.ParentLayer_AppIDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ParentLayer_AppID\' in table \'APP_Layers\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAPP_Layers.ParentLayer_AppIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public APP_LayersRow APP_LayersRowParent {
                 get {
-                    return ((APP_LayersRow)(this.GetParentRow(this.Table.ParentRelations["FK_dbo.APP_Layers_dbo.APP_Layers_ParentLayer_Id_ParentLayer_AppID"])));
+                    return ((APP_LayersRow)(this.GetParentRow(this.Table.ParentRelations["FK_dbo.APP_Layers_dbo.APP_Layers_Parent_Layer_ID_Parent_App_ID"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_dbo.APP_Layers_dbo.APP_Layers_ParentLayer_Id_ParentLayer_AppID"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_dbo.APP_Layers_dbo.APP_Layers_Parent_Layer_ID_Parent_App_ID"]);
                 }
             }
             
@@ -1879,6 +1872,30 @@ namespace CodingEventsTester {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_dbo.APP_Layers_dbo.myApps_AppID"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsParent_Layer_IDNull() {
+                return this.IsNull(this.tableAPP_Layers.Parent_Layer_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetParent_Layer_IDNull() {
+                this[this.tableAPP_Layers.Parent_Layer_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsParent_App_IDNull() {
+                return this.IsNull(this.tableAPP_Layers.Parent_App_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetParent_App_IDNull() {
+                this[this.tableAPP_Layers.Parent_App_IDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1907,36 +1924,12 @@ namespace CodingEventsTester {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsParentLayer_IdNull() {
-                return this.IsNull(this.tableAPP_Layers.ParentLayer_IdColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetParentLayer_IdNull() {
-                this[this.tableAPP_Layers.ParentLayer_IdColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsParentLayer_AppIDNull() {
-                return this.IsNull(this.tableAPP_Layers.ParentLayer_AppIDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetParentLayer_AppIDNull() {
-                this[this.tableAPP_Layers.ParentLayer_AppIDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public APP_LayersRow[] GetAPP_LayersRows() {
-                if ((this.Table.ChildRelations["FK_dbo.APP_Layers_dbo.APP_Layers_ParentLayer_Id_ParentLayer_AppID"] == null)) {
+                if ((this.Table.ChildRelations["FK_dbo.APP_Layers_dbo.APP_Layers_Parent_Layer_ID_Parent_App_ID"] == null)) {
                     return new APP_LayersRow[0];
                 }
                 else {
-                    return ((APP_LayersRow[])(base.GetChildRows(this.Table.ChildRelations["FK_dbo.APP_Layers_dbo.APP_Layers_ParentLayer_Id_ParentLayer_AppID"])));
+                    return ((APP_LayersRow[])(base.GetChildRows(this.Table.ChildRelations["FK_dbo.APP_Layers_dbo.APP_Layers_Parent_Layer_ID_Parent_App_ID"])));
                 }
             }
             
@@ -2120,6 +2113,22 @@ namespace CodingEventsTester {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string AppDesc2 {
+                get {
+                    try {
+                        return ((string)(this[this.tablemyApps.AppDesc2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'AppDesc2\' in table \'myApps\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablemyApps.AppDesc2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsAppNameNull() {
                 return this.IsNull(this.tablemyApps.AppNameColumn);
             }
@@ -2140,6 +2149,18 @@ namespace CodingEventsTester {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetAppDESCNull() {
                 this[this.tablemyApps.AppDESCColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsAppDesc2Null() {
+                return this.IsNull(this.tablemyApps.AppDesc2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetAppDesc2Null() {
+                this[this.tablemyApps.AppDesc2Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2803,54 +2824,48 @@ SELECT MigrationId, ContextKey, Model, ProductVersion FROM __MigrationHistory WH
             tableMapping.DataSetTable = "APP_Layers";
             tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("AppID", "AppID");
+            tableMapping.ColumnMappings.Add("Parent_Layer_ID", "Parent_Layer_ID");
+            tableMapping.ColumnMappings.Add("Parent_App_ID", "Parent_App_ID");
             tableMapping.ColumnMappings.Add("LayerName", "LayerName");
-            tableMapping.ColumnMappings.Add("ParentLayerID", "ParentLayerID");
             tableMapping.ColumnMappings.Add("LayerDESC", "LayerDESC");
-            tableMapping.ColumnMappings.Add("ParentLayer_Id", "ParentLayer_Id");
-            tableMapping.ColumnMappings.Add("ParentLayer_AppID", "ParentLayer_AppID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[APP_Layers] WHERE (([Id] = @Original_Id) AND ([AppID] = @Original_AppID) AND ([ParentLayerID] = @Original_ParentLayerID) AND ((@IsNull_ParentLayer_Id = 1 AND [ParentLayer_Id] IS NULL) OR ([ParentLayer_Id] = @Original_ParentLayer_Id)) AND ((@IsNull_ParentLayer_AppID = 1 AND [ParentLayer_AppID] IS NULL) OR ([ParentLayer_AppID] = @Original_ParentLayer_AppID)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[APP_Layers] WHERE (([Id] = @Original_Id) AND ([AppID] = @Original_AppID) AND ((@IsNull_Parent_Layer_ID = 1 AND [Parent_Layer_ID] IS NULL) OR ([Parent_Layer_ID] = @Original_Parent_Layer_ID)) AND ((@IsNull_Parent_App_ID = 1 AND [Parent_App_ID] IS NULL) OR ([Parent_App_ID] = @Original_Parent_App_ID)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AppID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ParentLayerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ParentLayerID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ParentLayer_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ParentLayer_Id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ParentLayer_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ParentLayer_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ParentLayer_AppID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ParentLayer_AppID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ParentLayer_AppID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ParentLayer_AppID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Parent_Layer_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parent_Layer_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Parent_Layer_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parent_Layer_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Parent_App_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parent_App_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Parent_App_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parent_App_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[APP_Layers] ([Id], [AppID], [LayerName], [ParentLayerID], [LayerDESC], [ParentLayer_Id], [ParentLayer_AppID]) VALUES (@Id, @AppID, @LayerName, @ParentLayerID, @LayerDESC, @ParentLayer_Id, @ParentLayer_AppID);
-SELECT Id, AppID, LayerName, ParentLayerID, LayerDESC, ParentLayer_Id, ParentLayer_AppID FROM APP_Layers WHERE (AppID = @AppID) AND (Id = @Id)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[APP_Layers] ([AppID], [Parent_Layer_ID], [Parent_App_ID], [LayerName], [LayerDESC]) VALUES (@AppID, @Parent_Layer_ID, @Parent_App_ID, @LayerName, @LayerDESC);
+SELECT Id, AppID, Parent_Layer_ID, Parent_App_ID, LayerName, LayerDESC FROM APP_Layers WHERE (AppID = @AppID) AND (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AppID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Parent_Layer_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parent_Layer_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Parent_App_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parent_App_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LayerName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LayerName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ParentLayerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ParentLayerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LayerDESC", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LayerDESC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ParentLayer_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ParentLayer_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ParentLayer_AppID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ParentLayer_AppID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[APP_Layers] SET [Id] = @Id, [AppID] = @AppID, [LayerName] = @LayerName, [ParentLayerID] = @ParentLayerID, [LayerDESC] = @LayerDESC, [ParentLayer_Id] = @ParentLayer_Id, [ParentLayer_AppID] = @ParentLayer_AppID WHERE (([Id] = @Original_Id) AND ([AppID] = @Original_AppID) AND ([ParentLayerID] = @Original_ParentLayerID) AND ((@IsNull_ParentLayer_Id = 1 AND [ParentLayer_Id] IS NULL) OR ([ParentLayer_Id] = @Original_ParentLayer_Id)) AND ((@IsNull_ParentLayer_AppID = 1 AND [ParentLayer_AppID] IS NULL) OR ([ParentLayer_AppID] = @Original_ParentLayer_AppID)));
-SELECT Id, AppID, LayerName, ParentLayerID, LayerDESC, ParentLayer_Id, ParentLayer_AppID FROM APP_Layers WHERE (AppID = @AppID) AND (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[APP_Layers] SET [AppID] = @AppID, [Parent_Layer_ID] = @Parent_Layer_ID, [Parent_App_ID] = @Parent_App_ID, [LayerName] = @LayerName, [LayerDESC] = @LayerDESC WHERE (([Id] = @Original_Id) AND ([AppID] = @Original_AppID) AND ((@IsNull_Parent_Layer_ID = 1 AND [Parent_Layer_ID] IS NULL) OR ([Parent_Layer_ID] = @Original_Parent_Layer_ID)) AND ((@IsNull_Parent_App_ID = 1 AND [Parent_App_ID] IS NULL) OR ([Parent_App_ID] = @Original_Parent_App_ID)));
+SELECT Id, AppID, Parent_Layer_ID, Parent_App_ID, LayerName, LayerDESC FROM APP_Layers WHERE (AppID = @AppID) AND (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AppID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Parent_Layer_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parent_Layer_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Parent_App_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parent_App_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LayerName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LayerName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ParentLayerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ParentLayerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LayerDESC", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LayerDESC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ParentLayer_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ParentLayer_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ParentLayer_AppID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ParentLayer_AppID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AppID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ParentLayerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ParentLayerID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ParentLayer_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ParentLayer_Id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ParentLayer_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ParentLayer_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ParentLayer_AppID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ParentLayer_AppID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ParentLayer_AppID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ParentLayer_AppID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Parent_Layer_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parent_Layer_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Parent_Layer_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parent_Layer_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Parent_App_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parent_App_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Parent_App_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Parent_App_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2867,8 +2882,8 @@ SELECT Id, AppID, LayerName, ParentLayerID, LayerDESC, ParentLayer_Id, ParentLay
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, AppID, LayerName, ParentLayerID, LayerDESC, ParentLayer_Id, ParentLaye" +
-                "r_AppID FROM dbo.APP_Layers";
+            this._commandCollection[0].CommandText = "SELECT Id, AppID, Parent_Layer_ID, Parent_App_ID, LayerName, LayerDESC FROM dbo.A" +
+                "PP_Layers";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2929,25 +2944,24 @@ SELECT Id, AppID, LayerName, ParentLayerID, LayerDESC, ParentLayer_Id, ParentLay
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, int Original_AppID, int Original_ParentLayerID, global::System.Nullable<int> Original_ParentLayer_Id, global::System.Nullable<int> Original_ParentLayer_AppID) {
+        public virtual int Delete(int Original_Id, int Original_AppID, global::System.Nullable<int> Original_Parent_Layer_ID, global::System.Nullable<int> Original_Parent_App_ID) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_AppID));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_ParentLayerID));
-            if ((Original_ParentLayer_Id.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_ParentLayer_Id.Value));
+            if ((Original_Parent_Layer_ID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_Parent_Layer_ID.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Original_ParentLayer_AppID.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_ParentLayer_AppID.Value));
+            if ((Original_Parent_App_ID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_Parent_App_ID.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2969,33 +2983,31 @@ SELECT Id, AppID, LayerName, ParentLayerID, LayerDESC, ParentLayer_Id, ParentLay
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Id, int AppID, string LayerName, int ParentLayerID, string LayerDESC, global::System.Nullable<int> ParentLayer_Id, global::System.Nullable<int> ParentLayer_AppID) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Id));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(AppID));
-            if ((LayerName == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+        public virtual int Insert(int AppID, global::System.Nullable<int> Parent_Layer_ID, global::System.Nullable<int> Parent_App_ID, string LayerName, string LayerDESC) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(AppID));
+            if ((Parent_Layer_ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Parent_Layer_ID.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(LayerName));
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(ParentLayerID));
+            if ((Parent_App_ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(Parent_App_ID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((LayerName == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(LayerName));
+            }
             if ((LayerDESC == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(LayerDESC));
-            }
-            if ((ParentLayer_Id.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(ParentLayer_Id.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((ParentLayer_AppID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(ParentLayer_AppID.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3017,53 +3029,51 @@ SELECT Id, AppID, LayerName, ParentLayerID, LayerDESC, ParentLayer_Id, ParentLay
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Id, int AppID, string LayerName, int ParentLayerID, string LayerDESC, global::System.Nullable<int> ParentLayer_Id, global::System.Nullable<int> ParentLayer_AppID, int Original_Id, int Original_AppID, int Original_ParentLayerID, global::System.Nullable<int> Original_ParentLayer_Id, global::System.Nullable<int> Original_ParentLayer_AppID) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Id));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(AppID));
-            if ((LayerName == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+        public virtual int Update(int AppID, global::System.Nullable<int> Parent_Layer_ID, global::System.Nullable<int> Parent_App_ID, string LayerName, string LayerDESC, int Original_Id, int Original_AppID, global::System.Nullable<int> Original_Parent_Layer_ID, global::System.Nullable<int> Original_Parent_App_ID, int Id) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(AppID));
+            if ((Parent_Layer_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Parent_Layer_ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(LayerName));
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(ParentLayerID));
+            if ((Parent_App_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Parent_App_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((LayerName == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(LayerName));
+            }
             if ((LayerDESC == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(LayerDESC));
             }
-            if ((ParentLayer_Id.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ParentLayer_Id.Value));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_AppID));
+            if ((Original_Parent_Layer_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Parent_Layer_ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((ParentLayer_AppID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(ParentLayer_AppID.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_AppID));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_ParentLayerID));
-            if ((Original_ParentLayer_Id.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_ParentLayer_Id.Value));
+            if ((Original_Parent_App_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Parent_App_ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Original_ParentLayer_AppID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_ParentLayer_AppID.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3084,8 +3094,8 @@ SELECT Id, AppID, LayerName, ParentLayerID, LayerDESC, ParentLayer_Id, ParentLay
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string LayerName, int ParentLayerID, string LayerDESC, global::System.Nullable<int> ParentLayer_Id, global::System.Nullable<int> ParentLayer_AppID, int Original_Id, int Original_AppID, int Original_ParentLayerID, global::System.Nullable<int> Original_ParentLayer_Id, global::System.Nullable<int> Original_ParentLayer_AppID) {
-            return this.Update(Original_Id, Original_AppID, LayerName, ParentLayerID, LayerDESC, ParentLayer_Id, ParentLayer_AppID, Original_Id, Original_AppID, Original_ParentLayerID, Original_ParentLayer_Id, Original_ParentLayer_AppID);
+        public virtual int Update(global::System.Nullable<int> Parent_Layer_ID, global::System.Nullable<int> Parent_App_ID, string LayerName, string LayerDESC, int Original_Id, int Original_AppID, global::System.Nullable<int> Original_Parent_Layer_ID, global::System.Nullable<int> Original_Parent_App_ID) {
+            return this.Update(Original_AppID, Parent_Layer_ID, Parent_App_ID, LayerName, LayerDESC, Original_Id, Original_AppID, Original_Parent_Layer_ID, Original_Parent_App_ID, Original_Id);
         }
     }
     
@@ -3575,6 +3585,7 @@ SELECT EventID, EventDesc, LayerID, AppID, EventTypeID, Discriminator FROM Codin
             tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("AppName", "AppName");
             tableMapping.ColumnMappings.Add("AppDESC", "AppDESC");
+            tableMapping.ColumnMappings.Add("AppDesc2", "AppDesc2");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -3583,18 +3594,22 @@ SELECT EventID, EventDesc, LayerID, AppID, EventTypeID, Discriminator FROM Codin
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[myApps] ([AppName], [AppDESC]) VALUES (@AppName, @AppDESC);\r\nS" +
-                "ELECT Id, AppName, AppDESC FROM myApps WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[myApps] ([AppName], [AppDESC], [AppDesc2]) VALUES (@AppName, @" +
+                "AppDESC, @AppDesc2);\r\nSELECT Id, AppName, AppDESC, AppDesc2 FROM myApps WHERE (I" +
+                "d = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AppName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AppDESC", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppDESC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AppDesc2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppDesc2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[myApps] SET [AppName] = @AppName, [AppDESC] = @AppDESC WHERE (([Id]" +
-                " = @Original_Id));\r\nSELECT Id, AppName, AppDESC FROM myApps WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[myApps] SET [AppName] = @AppName, [AppDESC] = @AppDESC, [AppDesc2] " +
+                "= @AppDesc2 WHERE (([Id] = @Original_Id));\r\nSELECT Id, AppName, AppDESC, AppDesc" +
+                "2 FROM myApps WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AppName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AppDESC", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppDESC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AppDesc2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AppDesc2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -3613,7 +3628,7 @@ SELECT EventID, EventDesc, LayerID, AppID, EventTypeID, Discriminator FROM Codin
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, AppName, AppDESC FROM dbo.myApps";
+            this._commandCollection[0].CommandText = "SELECT Id, AppName, AppDESC, AppDesc2 FROM dbo.myApps";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3696,7 +3711,7 @@ SELECT EventID, EventDesc, LayerID, AppID, EventTypeID, Discriminator FROM Codin
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string AppName, string AppDESC) {
+        public virtual int Insert(string AppName, string AppDESC, string AppDesc2) {
             if ((AppName == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -3708,6 +3723,12 @@ SELECT EventID, EventDesc, LayerID, AppID, EventTypeID, Discriminator FROM Codin
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(AppDESC));
+            }
+            if ((AppDesc2 == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(AppDesc2));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3729,7 +3750,7 @@ SELECT EventID, EventDesc, LayerID, AppID, EventTypeID, Discriminator FROM Codin
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string AppName, string AppDESC, int Original_Id, int Id) {
+        public virtual int Update(string AppName, string AppDESC, string AppDesc2, int Original_Id, int Id) {
             if ((AppName == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -3742,8 +3763,14 @@ SELECT EventID, EventDesc, LayerID, AppID, EventTypeID, Discriminator FROM Codin
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(AppDESC));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Id));
+            if ((AppDesc2 == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(AppDesc2));
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3764,8 +3791,8 @@ SELECT EventID, EventDesc, LayerID, AppID, EventTypeID, Discriminator FROM Codin
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string AppName, string AppDESC, int Original_Id) {
-            return this.Update(AppName, AppDESC, Original_Id, Original_Id);
+        public virtual int Update(string AppName, string AppDESC, string AppDesc2, int Original_Id) {
+            return this.Update(AppName, AppDESC, AppDesc2, Original_Id, Original_Id);
         }
     }
     
@@ -3945,7 +3972,7 @@ SELECT EventID, EventDesc, LayerID, AppID, EventTypeID, Discriminator FROM Codin
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    this.SortSelfReferenceRows(updatedRows, dataSet.Relations["FK_dbo.APP_Layers_dbo.APP_Layers_ParentLayer_Id_ParentLayer_AppID"], false);
+                    this.SortSelfReferenceRows(updatedRows, dataSet.Relations["FK_dbo.APP_Layers_dbo.APP_Layers_Parent_Layer_ID_Parent_App_ID"], false);
                     result = (result + this._aPP_LayersTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
@@ -3990,7 +4017,7 @@ SELECT EventID, EventDesc, LayerID, AppID, EventTypeID, Discriminator FROM Codin
                 global::System.Data.DataRow[] addedRows = dataSet.APP_Layers.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    this.SortSelfReferenceRows(addedRows, dataSet.Relations["FK_dbo.APP_Layers_dbo.APP_Layers_ParentLayer_Id_ParentLayer_AppID"], false);
+                    this.SortSelfReferenceRows(addedRows, dataSet.Relations["FK_dbo.APP_Layers_dbo.APP_Layers_Parent_Layer_ID_Parent_App_ID"], false);
                     result = (result + this._aPP_LayersTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
@@ -4041,7 +4068,7 @@ SELECT EventID, EventDesc, LayerID, AppID, EventTypeID, Discriminator FROM Codin
                 global::System.Data.DataRow[] deletedRows = dataSet.APP_Layers.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    this.SortSelfReferenceRows(deletedRows, dataSet.Relations["FK_dbo.APP_Layers_dbo.APP_Layers_ParentLayer_Id_ParentLayer_AppID"], true);
+                    this.SortSelfReferenceRows(deletedRows, dataSet.Relations["FK_dbo.APP_Layers_dbo.APP_Layers_Parent_Layer_ID_Parent_App_ID"], true);
                     result = (result + this._aPP_LayersTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }

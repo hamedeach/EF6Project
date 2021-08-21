@@ -21,12 +21,10 @@ namespace CodeEventsDomain.Classes
         public int AppID { get; set; }
         public int EventTypeID { get; set; }
 
-       // [Required]
+        [Required]
         [ForeignKey("LayerID,AppID")]
         public APP_Layers LayerObj { get; set; }
-      //  [Required]
-       // [ForeignKey("AppID"), Column(Order = 1)]
-        //public myApp AppObj { get; set; }
+   
     }
 
     public class ErrorEvent : CodingEvent
